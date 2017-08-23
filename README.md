@@ -1,7 +1,7 @@
 ## Environment Configurations
 
 
-These are the common **config** files of my daily working environment. 
+These are the common **config** files for my daily working environment. 
 
 ## Preview
 
