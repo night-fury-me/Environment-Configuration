@@ -1,11 +1,11 @@
 " +-------------------------------------------------------------+
-" | User 	: Redwanul Karim									|
-" | GitHub	: https://github.com/redwandipto					|
+" | User 	: Redwanul Karim                                    |
+" | GitHub	: https://github.com/redwandipto                    |
 " +-------------------------------------------------------------+
 
 
 " +--------------------------------------------------+
-" | Vim-PLug core									 |
+" | Vim-PLug core                                    |
 " +--------------------------------------------------+
 
 if has('vim_starting')
@@ -34,7 +34,7 @@ endif
 call plug#begin(expand('~/.vim/plugged'))
 
 " +--------------------------------------------------------+
-" | Plug install packages								   |
+" | Plug install packages                                  |
 " +--------------------------------------------------------+
 
 Plug 'scrooloose/nerdtree'
@@ -84,7 +84,7 @@ endif
 Plug 'honza/vim-snippets'
 
 " +----------------------------------------------------+
-" | Custom bundles									   |
+" | Custom bundles                                     |
 " +----------------------------------------------------+
 
 " C 
@@ -143,7 +143,7 @@ filetype plugin indent on
 
 
 " +-----------------------------------------------------+
-" | Basic Setup											|
+" | Basic Setup                                         |
 " +-----------------------------------------------------+
 "" Encoding
 set encoding=utf-8
@@ -193,7 +193,7 @@ let g:session_autosave = "no"
 let g:session_command_aliases = 1
 
 " +---------------------------------------------------------+
-" | Visual Settings											|
+" | Visual Settings                                         |
 " +---------------------------------------------------------+
 syntax on
 set ruler
@@ -276,7 +276,7 @@ let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
 
 " +---------------------------------------------+
-" | Abbreviations								|
+" | Abbreviations                               |
 " +---------------------------------------------+
 "" no one is really happy until you have this shortcuts
 cnoreabbrev W! w!
@@ -353,7 +353,7 @@ else
 endif
 
 " +-------------------------------------------------------------+
-" | Functions													|
+" | Functions                                                   |
 " +-------------------------------------------------------------+
 if !exists('*s:setupWrapping')
   function s:setupWrapping()
@@ -364,7 +364,7 @@ if !exists('*s:setupWrapping')
 endif
 
 " +-------------------------------------------------------------+
-" | Autocmd rules												|
+" | Autocmd rules                                               |
 " +-------------------------------------------------------------+
 "" The PC is fast enough, do syntax highlight syncing from start unless 200 lines
 augroup vimrc-sync-fromstart
@@ -394,7 +394,7 @@ augroup END
 set autoread
 
 " +-------------------------------------------------------------+
-" | Mappings													|
+" | Mappings                                                    |
 " +-------------------------------------------------------------+
 
 "" Split
@@ -523,7 +523,7 @@ vnoremap K :m '<-2<CR>gv=gv
 nnoremap <Leader>o :.Gbrowse<CR>
 
 " +-------------------------------------------------------------+
-" | Custom config												|
+" | Custom config                                               |
 " +-------------------------------------------------------------+
 
 " c
@@ -697,7 +697,7 @@ if filereadable(expand("~/.vimrc.local"))
 endif
 
 " +-------------------------------------------------------------+
-" | Convenience variables										|
+" | Convenience variables                                       |
 " +-------------------------------------------------------------+
 
 " vim-airline
@@ -738,7 +738,7 @@ endif
 
 
 " +-------------------------------------------------------------+
-" | Compiling shortcuts 										|
+" | Compiling shortcuts                                         |
 " +-------------------------------------------------------------+
 
 autocmd filetype python nnoremap <F4> :w <bar> exec '!python '.shellescape('%')<CR>
