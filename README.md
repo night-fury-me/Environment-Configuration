@@ -9,7 +9,7 @@ These are the common **config** files of my daily working environment.
 ![alt text](https://github.com/redwandipto/Environment-Configuration/raw/master/imgs/preview.jpg "Vim + Tmux + Zsh")
 
 
-##### Includes
+#### Includes
 1. vimrc
 2. zshrc
 3. tmux.conf
