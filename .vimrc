@@ -1,8 +1,13 @@
-" vim-bootstrap 89346c6
+" +-------------------------------------------------------------+
+" | User 	: Redwanul Karim									|
+" | GitHub	: https://github.com/redwandipto					|
+" +-------------------------------------------------------------+
 
-"*****************************************************************************
-"" Vim-PLug core
-"*****************************************************************************
+
+" +--------------------------------------------------+
+" | Vim-PLug core									 |
+" +--------------------------------------------------+
+
 if has('vim_starting')
   set nocompatible               " Be iMproved
 endif
@@ -28,25 +33,20 @@ endif
 " Required:
 call plug#begin(expand('~/.vim/plugged'))
 
-"*****************************************************************************
-"" Plug install packages
-"*****************************************************************************
+" +--------------------------------------------------------+
+" | Plug install packages								   |
+" +--------------------------------------------------------+
+
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/grep.vim'
-Plug 'vim-scripts/CSApprox'
-
 Plug 'Raimondi/delimitMate'
-Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
 Plug 'Yggdroot/indentLine'
-Plug 'avelino/vim-bootstrap-updater'
-Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -67,7 +67,8 @@ if exists('make')
 endif
 Plug 'Shougo/vimproc.vim', {'do': g:make}
 
-"" Vim-Session
+"" ===> Vim-Session
+
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 
@@ -82,24 +83,21 @@ endif
 
 Plug 'honza/vim-snippets'
 
-"" Color
+" +----------------------------------------------------+
+" | Custom bundles									   |
+" +----------------------------------------------------+
 
-
-"*****************************************************************************
-"" Custom bundles
-"*****************************************************************************
-
-" c
+" C 
 Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp']}
 Plug 'ludwig/split-manpage.vim'
 
 
-" go
+" GO
 "" Go Lang Bundle
-Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
+"" Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 
 
-" html
+" HTML
 "" HTML Bundle
 Plug 'hail2u/vim-css3-syntax'
 Plug 'gorodinskiy/vim-coloresque'
@@ -107,32 +105,31 @@ Plug 'tpope/vim-haml'
 Plug 'mattn/emmet-vim'
 
 
-" javascript
+" Javascript
 "" Javascript Bundle
 Plug 'jelera/vim-javascript-syntax'
 
 
 " php
-"" PHP Bundle
-Plug 'arnaud-lb/vim-php-namespace'
+"" PHP Bundle - Uncomment to use
+"" Plug 'arnaud-lb/vim-php-namespace'
 
 
-" python
-"" Python Bundle
-Plug 'davidhalter/jedi-vim'
-Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+" Python
+"" Python Bundle - Uncomment to use
+""Plug 'davidhalter/jedi-vim'
+""Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+
+" Ruby - Uncomment to use
+" Plug 'tpope/vim-rails'
+" Plug 'tpope/vim-rake'
+" Plug 'tpope/vim-projectionist'
+" Plug 'thoughtbot/vim-rspec'
+" Plug 'ecomba/vim-ruby-refactoring'
 
 
-" ruby
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
-Plug 'tpope/vim-projectionist'
-Plug 'thoughtbot/vim-rspec'
-Plug 'ecomba/vim-ruby-refactoring'
-
-
-"*****************************************************************************
-"*****************************************************************************
+"============================================================================
+"============================================================================
 
 "" Include user's extra bundle
 if filereadable(expand("~/.vimrc.local.bundles"))
@@ -145,9 +142,9 @@ call plug#end()
 filetype plugin indent on
 
 
-"*****************************************************************************
-"" Basic Setup
-"*****************************************************************************"
+" +-----------------------------------------------------+
+" | Basic Setup											|
+" +-----------------------------------------------------+
 "" Encoding
 set encoding=utf-8
 set fileencoding=utf-8
@@ -195,9 +192,9 @@ let g:session_autoload = "no"
 let g:session_autosave = "no"
 let g:session_command_aliases = 1
 
-"*****************************************************************************
-"" Visual Settings
-"*****************************************************************************
+" +---------------------------------------------------------+
+" | Visual Settings											|
+" +---------------------------------------------------------+
 syntax on
 set ruler
 set number
@@ -278,9 +275,9 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
 
-"*****************************************************************************
-"" Abbreviations
-"*****************************************************************************
+" +---------------------------------------------+
+" | Abbreviations								|
+" +---------------------------------------------+
 "" no one is really happy until you have this shortcuts
 cnoreabbrev W! w!
 cnoreabbrev Q! q!
@@ -327,7 +324,7 @@ endfunction
 
 autocmd VimEnter * call StartUp()
 
-" WebdevIcons
+" ===> WebdevIcons
 
 let g:webdevicons_enable = 1
 let g:webdevicons_enable_nerdtree = 1
@@ -338,26 +335,26 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:NERDTreeDirArrowExpandable="\uf054"
 let g:NERDTreeDirArrowCollapsible="\uf078"
 
-" grep.vim
+" ===> grep.vim
 nnoremap <silent> <leader>f :Rgrep<CR>
 let Grep_Default_Options = '-IR'
 let Grep_Skip_Files = '*.log *.db'
 let Grep_Skip_Dirs = '.git node_modules'
 
-" vimshell.vim
+" ===> vimshell.vim
 let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
 let g:vimshell_prompt =  '$ '
 
-" terminal emulation
+" ===> terminal emulation
 if g:vim_bootstrap_editor == 'nvim'
   nnoremap <silent> <leader>sh :terminal<CR>
 else
   nnoremap <silent> <leader>sh :VimShellCreate<CR>
 endif
 
-"*****************************************************************************
-"" Functions
-"*****************************************************************************
+" +-------------------------------------------------------------+
+" | Functions													|
+" +-------------------------------------------------------------+
 if !exists('*s:setupWrapping')
   function s:setupWrapping()
     set wrap
@@ -366,9 +363,9 @@ if !exists('*s:setupWrapping')
   endfunction
 endif
 
-"*****************************************************************************
-"" Autocmd Rules
-"*****************************************************************************
+" +-------------------------------------------------------------+
+" | Autocmd rules												|
+" +-------------------------------------------------------------+
 "" The PC is fast enough, do syntax highlight syncing from start unless 200 lines
 augroup vimrc-sync-fromstart
   autocmd!
@@ -396,9 +393,9 @@ augroup END
 
 set autoread
 
-"*****************************************************************************
-"" Mappings
-"*****************************************************************************
+" +-------------------------------------------------------------+
+" | Mappings													|
+" +-------------------------------------------------------------+
 
 "" Split
 noremap <Leader>h :<C-u>split<CR>
@@ -525,9 +522,9 @@ vnoremap K :m '<-2<CR>gv=gv
 "" Open current line on GitHub
 nnoremap <Leader>o :.Gbrowse<CR>
 
-"*****************************************************************************
-"" Custom configs
-"*****************************************************************************
+" +-------------------------------------------------------------+
+" | Custom config												|
+" +-------------------------------------------------------------+
 
 " c
 autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
@@ -694,17 +691,14 @@ vnoremap <leader>rriv :RRenameInstanceVariable<cr>
 vnoremap <leader>rem  :RExtractMethod<cr>
 
 
-"*****************************************************************************
-"*****************************************************************************
-
 "" Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
-"*****************************************************************************
-"" Convenience variables
-"*****************************************************************************
+" +-------------------------------------------------------------+
+" | Convenience variables										|
+" +-------------------------------------------------------------+
 
 " vim-airline
 if !exists('g:airline_symbols')
@@ -743,7 +737,11 @@ else
 endif
 
 
-" Comiping shortcut
+" +-------------------------------------------------------------+
+" | Compiling shortcuts 										|
+" +-------------------------------------------------------------+
+
 autocmd filetype python nnoremap <F4> :w <bar> exec '!python '.shellescape('%')<CR>
 autocmd filetype c nnoremap <F4> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
 autocmd filetype cpp nnoremap <F4> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
+
